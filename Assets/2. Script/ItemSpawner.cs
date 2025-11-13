@@ -20,15 +20,10 @@ public class ItemSpawner : MonoBehaviour
         poolObj.transform.SetParent(transform);
         objectPool = poolObj.AddComponent<ObjectPool>();
 
-        // ObjectPool 초기화 (Reflection으로 private 필드 설정)
-        var poolType = typeof(ObjectPool);
-        poolType.GetField("prefab", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
-            ?.SetValue(objectPool, itemPrefab);
-        poolType.GetField("initialPoolSize", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
-            ?.SetValue(objectPool, itemCount);
+        objectPool.Initialize(itemPrefab, itemCount);
 
         // 아이템 스폰
-        Invoke(nameof(SpawnItems), 0.1f); // ObjectPool Start 후 실행
+        Invoke(nameof(SpawnItems), 0.1f);
     }
 
     //랜덤하게 아이템을 스폰 

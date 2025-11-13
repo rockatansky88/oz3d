@@ -4,14 +4,18 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     [Header("Pool Settings")]
-    [SerializeField] private GameObject prefab;         // 풀링할 프리팹
-    [SerializeField] private int initialPoolSize = 20;  // 초기 풀 크기
+    [SerializeField] private GameObject prefab;
+    [SerializeField] private int initialPoolSize = 20;
 
     private Queue<GameObject> pool = new Queue<GameObject>();
-    private Transform poolParent;                       // 
+    private Transform poolParent;
 
-    void Start()
+    // 초기화 메서드 추가
+    public void Initialize(GameObject prefabToUse, int poolSize)
     {
+        prefab = prefabToUse;
+        initialPoolSize = poolSize;
+
         // 풀 부모 오브젝트 생성
         poolParent = new GameObject($"{prefab.name}_Pool").transform;
         poolParent.SetParent(transform);
@@ -20,6 +24,15 @@ public class ObjectPool : MonoBehaviour
         for (int i = 0; i < initialPoolSize; i++)
         {
             CreateNewObject();
+        }
+    }
+
+    void Start()
+    {
+        // Initialize가 호출되지 않았을 때만 실행
+        if (prefab != null && poolParent == null)
+        {
+            Initialize(prefab, initialPoolSize);
         }
     }
 
