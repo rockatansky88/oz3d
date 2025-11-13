@@ -10,7 +10,7 @@ public class ObjectPool : MonoBehaviour
     private Queue<GameObject> pool = new Queue<GameObject>();
     private Transform poolParent;
 
-    // 초기화 메서드 추가
+    // 풀 초기화
     public void Initialize(GameObject prefabToUse, int poolSize)
     {
         prefab = prefabToUse;
