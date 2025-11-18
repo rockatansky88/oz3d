@@ -46,8 +46,9 @@ public class IdleState : EnemyState
         }
     }
 
-    public override void Exit()
+    public override void Exit()  // 상태 종료 시 호출
     {
+
     }
 }
 

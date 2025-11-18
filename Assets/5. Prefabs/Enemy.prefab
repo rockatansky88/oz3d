@@ -73,6 +73,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ddb54b3bcee1124da2f442145c3cc13, type: 3}
       insertIndex: -1
       addedObject: {fileID: 808050902480286168}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ddb54b3bcee1124da2f442145c3cc13, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8529172822773084867}
   m_SourcePrefab: {fileID: 100100000, guid: 8ddb54b3bcee1124da2f442145c3cc13, type: 3}
 --- !u!1 &321408752073210871 stripped
 GameObject:
@@ -144,6 +147,22 @@ MonoBehaviour:
   rotationSpeed: 120
   patrolRadius: 10
   spawnPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &-8529172822773084867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321408752073210871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 926ba5d6ffdef844b966cbc1beac3d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  iconHeight: 15
+  iconScale: {x: 1.2, y: 1.2, z: 1.2}
+  iconShader: {fileID: 4800000, guid: 128e987d567d4e2c824d754223b3f3b0, type: 3}
 --- !u!95 &6475652855835130679 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 8ddb54b3bcee1124da2f442145c3cc13, type: 3}
